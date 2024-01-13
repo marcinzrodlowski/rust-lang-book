@@ -1,15 +1,14 @@
 use std::io;
 
 fn main() {
-    println!("Please input a temperature in fahrenheit");
+    println!("Please input a temperature to convert:");
 
-    let mut fahrenheit = String::new();
+    let mut temperature = String::new();
 
     io::stdin()
-        .read_line(&mut fahrenheit)
+        .read_line(&mut temperature)
         .expect("Failed to read line");
 
-    // shadowing
     let fahrenheit: f64 = match fahrenheit.trim().parse() {
         Ok(num) => num,
         Err(_) => {
